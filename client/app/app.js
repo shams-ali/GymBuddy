@@ -1,6 +1,6 @@
 angular.module('gymbuddy', [
   'gymbuddy.services',
-  'shortly.auth',
+  'gymbuddy.auth',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -33,7 +33,7 @@ angular.module('gymbuddy', [
   // then add it to the header so the server can validate the request
   var attach = {
     request: function (object) {
-      var jwt = $window.localStorage.getItem('com.shortly');
+      var jwt = $window.localStorage.getItem('com.gymbudy');
       if (jwt) {
         object.headers['x-access-token'] = jwt;
       }
