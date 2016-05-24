@@ -29,12 +29,16 @@ module.exports = {
     console.log('this is user in newStat: ', user);
     var height = req.body.height;
     var weight = req.body.weight;
+    var sex = req.body.sex;
+    var age = req.body.age;
     findStat({user: user})
     .then(function(match) {
       if (match) {
         console.log('match in findstat');
         match.weight = weight;
         match.height = height;
+        match.sex = sex;
+        match.age = age;
         match.save();
         console.log('this is match.weight', match.weight);
         console.log('this is match.height', match.height);
@@ -43,6 +47,8 @@ module.exports = {
       } else {
         var newStat = {
           user: user,
+          sex: sex,
+          age: age,
           weight: weight,
           height: height
         };

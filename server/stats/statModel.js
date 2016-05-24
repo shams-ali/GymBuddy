@@ -3,10 +3,13 @@ var crypto = require('crypto');
 
 var StatSchema = new mongoose.Schema({
   user: String,
+  age: Number,
+  sex: String,
   weight: Number,
   height: Number,
   bmi: Number,
-  bmiClass: String
+  bmiClass: String,
+  bmr: Number
 });
 
 var calculateBMI = function (weight, height) {
@@ -30,11 +33,24 @@ var calculateClass = function(bmi) {
   }
 };
 
+var calculateBMR = function(weight, height, sex, age) {
+  var weightkg = weight / 2.2;
+  var heightcm = height * 2.54;
+  if (sex === 'm') {
+    return 66.47 + (13.75 * weightkg) + (5 * heightcm) - (6.75 * age);
+  }
+  if (sex === 'f') {
+    return 665.09 + (9.56 * weightkg) + (1.84 * heightcm) - (4.67 * age);
+  }
+};
+
 StatSchema.pre('save', function (next) {
   var bmi = calculateBMI(this.weight, this.height);
   var bmiClass = calculateClass(bmi);
+  var bmr = calculateBMR(this.weight, this.height, this.sex, this.age);
   this.bmi = Math.round(bmi);
   this.bmiClass = bmiClass;
+  this.bmr = bmr;
   next();
 });
 

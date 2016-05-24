@@ -21,10 +21,13 @@
     <div class="stat"
         ng-repeat="stat in data.stats">
       <div class="info">
+        <div class="age">Age: {{ stat.age }} </div>
+        <div class="sex">Sex: {{ stat.sex }} </div>
         <div class="weight">Weight: {{ stat.weight }} lbs</div>
         <div class="height">Height: {{ stat.height }} in</div>
         <div class="bmi">BMI: {{ stat.bmi }}</div>
         <div class="bmi">Class: {{ stat.bmiClass }}</div>
+        <div class="bmi">BMR: {{ stat.bmr }}</div>
       </div>
     </div>
   </div>

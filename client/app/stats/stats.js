@@ -23,7 +23,6 @@ angular.module('gymbuddy.stats', [])
 
   $scope.signout = function() {
     Auth.signout();
-    $scope.user = null;
   };
 
 });
