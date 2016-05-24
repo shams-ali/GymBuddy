@@ -13,7 +13,7 @@ module.exports = {
     var token = req.body.token;
     var user = jwt.decode(token, 'secret').username;
     console.log('this is user in allStat: ', user);
-    findStat({user: user})
+    findAllStats({user: user})
       .then(function (match) {
         console.log('this is stats in allStats: ', match);
         res.send(match);
