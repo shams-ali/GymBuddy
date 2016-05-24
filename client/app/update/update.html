@@ -12,7 +12,7 @@
     </ul>
   </nav>
   <div class="creator">
-    <form name="gymbuddyForm" ng-submit="updateStats()">
+    <form name="gymbuddyForm" ng-submit="updateStats()" novalidate>
       <input type="number" placeholder="Enter Height Here" ng-model="stat.height">
       <input type="number" placeholder="Enter Weight Here" ng-model="stat.weight">
       <button>Update Your Stats</button>

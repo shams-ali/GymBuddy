@@ -18,10 +18,12 @@ angular.module('gymbuddy', [
     .when('/stats', {
       templateUrl: 'app/stats/stats.html',
       controller: 'StatsController',
+      authenticate: true
     })
     .when('/update', {
       templateUrl: 'app/update/update.html',
       controller: 'UpdateController',
+      authenticate: true
     })
     .otherwise({
       redirectTo: '/stats'
