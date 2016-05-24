@@ -25,6 +25,16 @@ angular.module('gymbuddy', [
       controller: 'StatsController',
       authenticate: true
     })
+    .when('/bmr', {
+      templateUrl: 'app/calculations/bmr.html',
+      controller: 'StatsController',
+      authenticate: true
+    })
+    .when('/active', {
+      templateUrl: 'app/calculations/active.html',
+      controller: 'StatsController',
+      authenticate: true
+    })
     .when('/update', {
       templateUrl: 'app/update/update.html',
       controller: 'UpdateController',

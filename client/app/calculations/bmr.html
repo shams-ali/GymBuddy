@@ -9,7 +9,7 @@
   <nav class="navigation">
     <ul>
       <li>
-          <a class="selected" href="#/stats">Your Stats</a>
+          <a href="#/stats">Your Stats</a>
       </li>
       <li>
           <a href="#/update">Update</a>
@@ -18,7 +18,7 @@
           <a href="#/bmi">B.M.I</a>
       </li>
       <li>
-          <a href="#/bmr">B.M.R.</a>
+          <a class="selected" href="#/bmr">B.M.R.</a>
       </li>
       <li>
           <a href="#/active">Caloric Intake</a>
@@ -30,12 +30,7 @@
     <div class="stat"
         ng-repeat="stat in data.stats">
       <div class="info">
-        <div class="age">Your Age: {{ stat.age }} </div>
-        <div class="sex">Your Gender: {{ stat.sex }} </div>
-        <div class="weight">Your Weight: {{ stat.weight }} lbs</div>
-        <div class="height">Your Height: {{ stat.height }} in</div>
-        <div class="active">Your Activity Level: {{ stat.active }}</div>
-        <div class="calNeed">Daily Caloric Need: {{ stat.calNeed }}</div>
+        <div class="bmr">Your Basal Metabolic Rate: {{ stat.bmr }} calories/day</div>
       </div>
     </div>
   </div>
