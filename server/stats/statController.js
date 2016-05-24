@@ -15,5 +15,8 @@ module.exports = {
       .fail(function (error) {
         next(error);
       });
+  },
+  newStat: function (req, res, next) {
+
   }
 };

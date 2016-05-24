@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<div id="container">
+  <nav class="navigation">
+    <ul>
+      <li>
+          <a href="#/stats">Stats</a>
+      </li>
+       <li>
+          <a class="selected" href="#/update">Update</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="creator">
+    <form name="gymbuddyForm" ng-submit="addStat()">
+      <input type="number" ng-model="stat.height">
+      <input type="number" ng-model="stat.weight">
+      <button>Update Your Stats</button>
+    </form>
+  </div>
+  </div>

@@ -12,7 +12,7 @@ var calculateBMI = function (weight, height) {
   return bmi * 703;
 };
 
-LinkSchema.pre('save', function (next) {
+StatSchema.pre('save', function (next) {
   var bmi = calculateBMI(this.weight, this.height);
   this.bmi = bmi;
   next();

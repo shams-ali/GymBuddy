@@ -1,3 +1,4 @@
+var statsController = require('../stats/statController.js');
 var userController = require('../users/userController.js');
 var helpers = require('./helpers.js'); // our custom middleware
 

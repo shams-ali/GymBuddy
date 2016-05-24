@@ -15,4 +15,15 @@
     </ul>
   </nav>
 
+  <div class="stats">
+    <div class="stat"
+        ng-repeat="stat in data.stats">
+      <div class="info">
+        <div class="weight">{{ stat.weight }}</div>
+        <div class="height">{{ stat.height }}</div>
+        <div class="bmi">{{ stat.bmi }}</div>
+      </div>
+    </div>
+  </div>
+
 </div>
