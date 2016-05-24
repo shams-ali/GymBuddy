@@ -36,11 +36,11 @@ var calculateClass = function(bmi) {
 var calculateBMR = function(weight, height, sex, age) {
   var weightkg = weight / 2.2;
   var heightcm = height * 2.54;
-  if (sex === 'm') {
-    return 66.47 + (13.75 * weightkg) + (5 * heightcm) - (6.75 * age);
+  if (sex === 'male') {
+    return Math.round(66.47 + (13.75 * weightkg) + (5 * heightcm) - (6.75 * age));
   }
-  if (sex === 'f') {
-    return 665.09 + (9.56 * weightkg) + (1.84 * heightcm) - (4.67 * age);
+  if (sex === 'female') {
+    return Math.round(665.09 + (9.56 * weightkg) + (1.84 * heightcm) - (4.67 * age));
   }
 };
 

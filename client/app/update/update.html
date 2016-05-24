@@ -12,14 +12,14 @@
     </ul>
   </nav>
   <div class="creator">
+    <div>
+      <input name="sex" type="radio" value="female" ng-model="stat.sex"/>Female
+      <input name="sex" type="radio" value="male" ng-model="stat.sex"/>Male
+    </div>
     <form name="gymbuddyForm" ng-submit="updateStats()" novalidate>
       <div>
         <input name="age" type="number" placeholder="Age" ng-model="stat.age" required/>
         <p ng-if="gymbuddyForm.age.$error.required && gymbuddyForm.age.$dirty" class="message">Age is required</p>
-      </div>
-      <div>
-        <input name="sex" type="string" placeholder="Enter sex: m/f" ng-model="stat.sex" required/>
-        <p ng-if="gymbuddyForm.sex.$error.required && gymbuddyForm.sex.$dirty" class="message">sex is required</p>
       </div>
       <div>
         <input name="height" type="number" placeholder="Height In Inches" ng-model="stat.height" required/>
