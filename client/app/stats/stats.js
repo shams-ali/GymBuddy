@@ -6,8 +6,12 @@ angular.module('gymbuddy.stats', [])
   $scope.data = {};
   var initializeStats = function() {
     $scope.loading = true;
-    Stats.getStats()
+    $scope.data.token = $window.localStorage.getItem('com.gymbuddy');
+    console.log('this is scope.data.token', $scope.data.token);
+    Stats.getStats($scope.data)
       .then(function(stats) {
+        console.log('this is stats in getStats', stats);
+        $scope.loading = false;
         $scope.data.stats = stats;
       })
       .catch(function(error) {

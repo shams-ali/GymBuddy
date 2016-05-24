@@ -9,10 +9,14 @@ var findAllStats = Q.nbind(Stat.find, Stat);
 
 module.exports = {
   allStats: function (req, res, next) {
-    findAllStats({})
-      .then(function (stats) {
-        console.log('this is stats in allStats: ', stats);
-        res.json(stats);
+    console.log('this is token in allStat: ', req.body.token);
+    var token = req.body.token;
+    var user = jwt.decode(token, 'secret').username;
+    console.log('this is user in allStat: ', user);
+    findStat({user: user})
+      .then(function (match) {
+        console.log('this is stats in allStats: ', match);
+        res.send(match);
       })
       .fail(function (error) {
         next(error);

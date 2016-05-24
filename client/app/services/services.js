@@ -2,12 +2,14 @@ angular.module('gymbuddy.services', [])
 
 .factory('Stats', function($http) {
 
-  var getStats = function(data) {
+  var getStats = function(stats) {
     return $http({
-      method: 'GET',
-      url: 'api/stats'
+      method: 'POST',
+      url: 'api/stats1',
+      data: stats
     })
     .then(function(resp) {
+      console.log('this is resp.data in getStats', resp.data);
       return resp.data;
     });
   };
