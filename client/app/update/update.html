@@ -21,7 +21,7 @@
         <input name="weight" type="number" placeholder="Weight In lbs" ng-model="stat.weight" required/>
         <p ng-if="gymbuddyForm.weight.$error.required && gymbuddyForm.weight.$dirty">Weight is required</p>
       </div>
-      <input type="submit" value="Update"/>
+      <input type="submit" value="Update" ng-disabled="gymbuddyForm.$invalid"/>
     </form>
   </div>
   </div>
