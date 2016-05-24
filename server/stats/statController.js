@@ -17,6 +17,26 @@ module.exports = {
       });
   },
   newStat: function (req, res, next) {
-
+    var user = res.body.user;
+    var height = req.body.height;
+    var weight = req.body.weight;
+    findStat({height: height})
+    .then(function(match) {
+      if (match) {
+        res.send(match);
+      } else {
+        var newStat = {
+          weight: weight,
+          height: height
+        };
+        return createStat(newStat);
+      }
+    }).then(function(createdStat) {
+      if (createdStat) {
+        res.json(createdStat);
+      }
+    }).fail(function(error) {
+      next(error);
+    });
   }
 };

@@ -12,8 +12,17 @@ angular.module('gymbuddy.services', [])
     });
   };
 
+  var updateNewStats = function(stats) {
+    return $http({
+      method: 'POST',
+      url: 'api/stats',
+      data: stats
+    });
+  };
+
   return {
-    getStats: getStats
+    getStats: getStats,
+    updateNewStats: updateNewStats
   };
 
 })
