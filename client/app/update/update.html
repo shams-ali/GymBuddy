@@ -13,9 +13,11 @@
   </nav>
   <div class="creator">
     <form name="gymbuddyForm" ng-submit="updateStats()" novalidate>
-      <input type="number" placeholder="Height In Inches" ng-model="stat.height">
-      <input type="number" placeholder="Weight In lbs" ng-model="stat.weight">
+      <input name="height" type="number" placeholder="Height In Inches" ng-model="stat.height" required>
+      <input name="weight" type="number" placeholder="Weight In lbs" ng-model="stat.weight" required>
       <button>Update Your Stats</button>
+      <p ng-show="gymbuddyForm.height.$error.required">Height is required</p>
+      <p ng-show="gymbuddyForm.weight.$error.required">Weight is required</p>
     </form>
   </div>
   </div>

@@ -5,7 +5,7 @@ angular.module('gymbuddy.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
-
+  $scope.user = null;
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
@@ -13,7 +13,9 @@ angular.module('gymbuddy.auth', [])
         $location.path('/stats');
       })
       .catch(function (error) {
-        console.error(error);
+        $scope.user = null;
+        //$location.path('/signup');
+        console.error('this is signin error', error);
       });
   };
 
