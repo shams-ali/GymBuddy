@@ -3,7 +3,9 @@
 <div ng-controller="StatsController" id="container">
 
   <h1>{{hello}}</h1>
-
+  <form name="signinForm" ng-submit="signout()">
+    <button>signout</button>
+  </form>
   <nav class="navigation">
     <ul>
       <li>

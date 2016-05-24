@@ -1,6 +1,6 @@
 angular.module('gymbuddy.stats', [])
 
-.controller('StatsController', function ($scope, $window, Stats) {
+.controller('StatsController', function ($scope, $window, Auth, Stats) {
   // Your code here
 
   $scope.data = {};
@@ -20,5 +20,9 @@ angular.module('gymbuddy.stats', [])
   };
 
   initializeStats();
+
+  $scope.signout = function() {
+    Auth.signout();
+  };
 
 });
