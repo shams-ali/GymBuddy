@@ -9,7 +9,6 @@ var findAllStats = Q.nbind(Stat.find, Stat);
 
 module.exports = {
   allStats: function (req, res, next) {
-    console.log('this is token in allStat: ', req.body.token);
     var token = req.body.token;
     var user = jwt.decode(token, 'secret').username;
     console.log('this is user in allStat: ', user);
@@ -23,14 +22,16 @@ module.exports = {
       });
   },
   newStat: function (req, res, next) {
-    console.log('this is token ins newStat: ', req.body.token);
     var token = req.body.token;
     var user = jwt.decode(token, 'secret').username;
     console.log('this is user in newStat: ', user);
     var height = req.body.height;
     var weight = req.body.weight;
     var sex = req.body.sex;
+    console.log('this is sex in newStat:', sex);
     var age = req.body.age;
+    var active = req.body.active;
+    console.log('this is active in newstat', active);
     findStat({user: user})
     .then(function(match) {
       if (match) {
@@ -39,10 +40,8 @@ module.exports = {
         match.height = height;
         match.sex = sex;
         match.age = age;
+        match.active = active;
         match.save();
-        console.log('this is match.weight', match.weight);
-        console.log('this is match.height', match.height);
-        console.log('this is match', match);
         res.send(match);
       } else {
         var newStat = {
@@ -50,7 +49,8 @@ module.exports = {
           sex: sex,
           age: age,
           weight: weight,
-          height: height
+          height: height,
+          active: active
         };
         console.log('creating newStat');
         return createStat(newStat);

@@ -12,9 +12,18 @@
     </ul>
   </nav>
   <div class="creator">
-    <div>
-      <input name="sex" type="radio" value="female" ng-model="stat.sex"/>Female
-      <input name="sex" type="radio" value="male" ng-model="stat.sex"/>Male
+    <div class="radio">
+      <div>
+        <input name="sex" type="radio" value="female" ng-model="stat.sex"/>Female
+        <input name="sex" type="radio" value="male" ng-model="stat.sex"/>Male
+      </div>
+      <div>
+        <input name="activity" type="radio" value="Sedentary" ng-model="stat.active"/>Sedentary
+        <input name="activity" type="radio" value="Lightly Active" ng-model="stat.active"/>Lightly Active
+        <input name="activity" type="radio" value="Moderately Active" ng-model="stat.active"/>Moderately Active
+        <input name="activity" type="radio" value="Very Active" ng-model="stat.active"/>Very Active
+        <input name="activity" type="radio" value="Extra Active" ng-model="stat.active"/>Extra Active
+      </div>
     </div>
     <form name="gymbuddyForm" ng-submit="updateStats()" novalidate>
       <div>
