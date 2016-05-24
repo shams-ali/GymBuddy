@@ -4,5 +4,16 @@ angular.module('gymbuddy.stats', [])
   // Your code here
 
   $scope.data = {};
+  var initializeStats = function() {
+    Stats.getStats()
+      .then(function(stats) {
+        $scope.data.stats = stats;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
+  initializeStats();
 
 });

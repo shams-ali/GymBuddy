@@ -1,5 +1,7 @@
 angular.module('gymbuddy', [
+  'gymbuddy.stats',
   'gymbuddy.services',
+  'gymbuddy.update',
   'gymbuddy.auth',
   'ngRoute'
 ])
