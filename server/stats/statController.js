@@ -11,6 +11,7 @@ module.exports = {
   allStats: function (req, res, next) {
     findAllStats({})
       .then(function (stats) {
+        console.log('this is stats in allStats: ', stats);
         res.json(stats);
       })
       .fail(function (error) {
@@ -28,6 +29,12 @@ module.exports = {
     .then(function(match) {
       if (match) {
         console.log('match in findstat');
+        match.weight = weight;
+        match.height = height;
+        match.save();
+        console.log('this is match.weight', match.weight);
+        console.log('this is match.height', match.height);
+        console.log('this is match', match);
         res.send(match);
       } else {
         var newStat = {

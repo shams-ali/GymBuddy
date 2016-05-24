@@ -5,12 +5,13 @@ var StatSchema = new mongoose.Schema({
   user: String,
   weight: Number,
   height: Number,
-  bmi: Number
+  bmi: Number,
+  class: 'text'
 });
 
 var calculateBMI = function (weight, height) {
   var bmi = weight / (height * height);
-  return bmi * 703;
+  return Math.round(bmi * 703);
 };
 
 StatSchema.pre('save', function (next) {
