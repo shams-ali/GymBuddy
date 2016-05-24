@@ -2,9 +2,10 @@
 <div id="signin">
   <h1>signin</h1>
   <form name="signinForm" ng-submit="signin()">
-    <input type="text" placeholder="username" ng-model="user.username">
-    <input type="password" placeholder="password" ng-model="user.password">
+    <input type="text" placeholder="username" ng-model="user.username" required>
+    <input type="password" placeholder="password" ng-model="user.password" required>
     <button>signin</button>
+    <p ng-if="siginForm.$error && signinForm.$dirty">Please Try Again</p>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>

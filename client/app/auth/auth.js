@@ -13,6 +13,7 @@ angular.module('gymbuddy.auth', [])
       })
       .catch(function (error) {
         $scope.user = null;
+        $location.path('/signup');
         console.error('this is signin error', error);
       });
   };
