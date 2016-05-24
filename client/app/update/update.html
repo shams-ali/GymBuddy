@@ -13,11 +13,15 @@
   </nav>
   <div class="creator">
     <form name="gymbuddyForm" ng-submit="updateStats()" novalidate>
-      <input name="height" type="number" placeholder="Height In Inches" ng-model="stat.height" required>
-      <input name="weight" type="number" placeholder="Weight In lbs" ng-model="stat.weight" required>
-      <button>Update Your Stats</button>
-      <p ng-show="gymbuddyForm.height.$error.required">Height is required</p>
-      <p ng-show="gymbuddyForm.weight.$error.required">Weight is required</p>
+      <div>
+        <input name="height" type="number" placeholder="Height In Inches" ng-model="stat.height" required/>
+        <p ng-show="gymbuddyForm.height.$error.required">Height is required</p>
+      </div>
+      <div>
+        <input name="weight" type="number" placeholder="Weight In lbs" ng-model="stat.weight" required/>
+        <p ng-if="gymbuddyForm.weight.$error.required">Weight is required</p>
+      </div>
+      <input type="submit" value="Update"/>
     </form>
   </div>
   </div>
