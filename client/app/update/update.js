@@ -1,12 +1,13 @@
 angular.module('gymbuddy.update', [])
 
-.controller('UpdateController', function ($scope, Stats) {
+.controller('UpdateController', function ($scope, $window, $location, Stats) {
   // Your code here
 
   $scope.stat = {};
   $scope.updateStats = function () {
     $scope.loading = true;
-    Links.updateNewStats($scope.stat)
+    $scope.stat.token = $window.localStorage.getItem('com.gymbuddy');
+    Stats.updateNewStats($scope.stat)
       .then(function () {
         $scope.loading = false;
         $location.path('/');

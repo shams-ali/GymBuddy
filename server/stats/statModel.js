@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var crypto = require('crypto');
 
 var StatSchema = new mongoose.Schema({
+  user: String,
   weight: Number,
   height: Number,
   bmi: Number
