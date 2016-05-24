@@ -15,11 +15,11 @@
     <form name="gymbuddyForm" ng-submit="updateStats()" novalidate>
       <div>
         <input name="height" type="number" placeholder="Height In Inches" ng-model="stat.height" required/>
-        <p ng-show="gymbuddyForm.height.$error.required">Height is required</p>
+        <p ng-if="gymbuddyForm.height.$error.required && gymbuddyForm.height.$dirty">Height is required</p>
       </div>
       <div>
         <input name="weight" type="number" placeholder="Weight In lbs" ng-model="stat.weight" required/>
-        <p ng-if="gymbuddyForm.weight.$error.required">Weight is required</p>
+        <p ng-if="gymbuddyForm.weight.$error.required && gymbuddyForm.weight.$dirty">Weight is required</p>
       </div>
       <input type="submit" value="Update"/>
     </form>
