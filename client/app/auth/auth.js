@@ -9,7 +9,7 @@ angular.module('gymbuddy.auth', [])
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.gymbuddy', token);
-        $location.path('/stats');
+        $location.path('/update');
       })
       .catch(function (error) {
         $scope.user = null;
@@ -22,7 +22,7 @@ angular.module('gymbuddy.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.gymbuddy', token);
-        $location.path('/stats');
+        $location.path('/update');
       })
       .catch(function (error) {
         console.error(error);

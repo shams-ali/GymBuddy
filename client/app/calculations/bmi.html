@@ -30,6 +30,7 @@
     <div class="stat"
         ng-repeat="stat in data.stats">
       <div class="info">
+        <p>The body mass index is calculated by dividing your weight (your weight is {{stat.weight}}lbs) in lbs by your height(your height is: {{stat.height}} inches) in inches then multiplying it by the constant 703.</p>
         <div class="bmi">You Body Mass Index: {{ stat.bmi }}</div>
         <div class="bmiClass">Your Body Mass Index Class: {{ stat.bmiClass }}</div>
       </div>

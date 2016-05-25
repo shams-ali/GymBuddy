@@ -30,6 +30,7 @@
     <div class="stat"
         ng-repeat="stat in data.stats">
       <div class="info">
+        <p>Your BMR is the amount of energy you expend each day when at rest. Your Gender({{stat.sex}}), your age({{stat.age}}), your height({{stat.height}}in) and your weight({{stat.weight}}lbs) are important for this calculation.</p>
         <div class="bmr">Your Basal Metabolic Rate: {{ stat.bmr }} calories/day</div>
       </div>
     </div>
