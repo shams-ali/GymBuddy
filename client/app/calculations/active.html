@@ -31,7 +31,11 @@
         ng-repeat="stat in data.stats">
       <div class="info">
         <p>To calculate your daily caloric intake we use the Harris Benedict Formula. This formula uses yuor BMR and multiplies it by your activity level(we give this a number) in order to determine your daily energy expenditure. It is important to note that the Harris Benedict Formula does not account for lean body mass. Therefore, those individual on the extreme scales of lean or fat will not have accurate calcualtions from this formula.</p>
+        <p>Here is your daily nutritional needs based on maintaining weight.</p>
         <div class="calNeed">Daily Caloric Need: {{ stat.calNeed }}</div>
+        <div class="carbs">Carbs(55%): {{ stat.carbs }}</div>
+        <div class="protein">Protein(15%): {{ stat.protein }}</div>
+        <div class="fat">Fat(30%): {{ stat.fats }}</div>
       </div>
     </div>
   </div>

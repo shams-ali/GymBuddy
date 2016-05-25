@@ -13,6 +13,9 @@ angular.module('gymbuddy.stats', [])
         console.log('this is stats in getStats', stats);
         $scope.loading = false;
         $scope.data.stats = stats;
+        $scope.data.stats[0].carbs = Math.round($scope.data.stats[0].calNeed * 0.55);
+        $scope.data.stats[0].protein = Math.round($scope.data.stats[0].calNeed * 0.15);
+        $scope.data.stats[0].fats = Math.round($scope.data.stats[0].calNeed * 0.30);
       })
       .catch(function(error) {
         console.log(error);
