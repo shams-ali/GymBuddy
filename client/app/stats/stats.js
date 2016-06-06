@@ -7,7 +7,7 @@ angular.module('gymbuddy.stats', [])
   var initializeStats = function() {
     $scope.loading = true;
     $scope.data.token = $window.localStorage.getItem('com.gymbuddy');
-    console.log('this is scope.data.token', $scope.data.token);
+    //console.log('this is scope.data.token', $scope.data.token);
     Stats.getStats($scope.data)
       .then(function(stats) {
         console.log('this is stats in getStats', stats);
